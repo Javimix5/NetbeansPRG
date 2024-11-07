@@ -15,13 +15,18 @@ public class JgpT04E01h {
         System.out.println("Introduce una cadena de numeros: ");
         String cadena = teclado.nextLine();
 
-        try {
-
+        if (esNumerico(cadena)) {
+            // Convertir la cadena a un número entero
             int numero = Integer.parseInt(cadena);
-            System.out.println("La cadena convertida a numero entero es: " + numero);
-        } catch (NumberFormatException e) {
-            System.out.println("Error: La cadena no es un numero valido.");
+            System.out.println("El numero convertido es: " + numero);
+        } else {
+            System.out.println("Error: La cadena no es un numero válido.");
         }
 
+    }
+
+    // Método para verificar si una cadena contiene solo dígitos
+    public static boolean esNumerico(String cadena) {
+        return cadena.matches("\\d+"); // Expresión regular que verifica solo dígitos del 0 al 9
     }
 }
