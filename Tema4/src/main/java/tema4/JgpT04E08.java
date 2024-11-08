@@ -27,7 +27,7 @@ public class JgpT04E08 {
         if (posicion < 0 || posicion >= cadena.length()) {
             System.out.println("La posicion ingresada no es valida.");
         } else {
-            String nuevaCadena = cadena.substring(0,posicion) + letra + cadena.substring(posicion + 1);
+            String nuevaCadena = cadena.substring(0,posicion -1) + letra + cadena.substring(posicion);
             System.out.println("Cadena resultante: " + nuevaCadena);
         }
     }
