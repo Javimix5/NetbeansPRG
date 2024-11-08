@@ -31,5 +31,4 @@ public class JgpT04E08 {
             System.out.println("Cadena resultante: " + nuevaCadena);
         }
     }
-
 }
