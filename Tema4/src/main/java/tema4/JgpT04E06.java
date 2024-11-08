@@ -16,28 +16,34 @@ public class JgpT04E06 {
         System.out.print("Introduce un email: ");
         String email = teclado.nextLine();
 
-        // Buscar la posición de '@' y del primer '.' después de '@'
-        int arrobaPos = email.indexOf('@');
-        int puntoPos = email.indexOf('.', arrobaPos);
+        // Buscamos la posición de la Arroba
+        int Arroba = email.indexOf('@');
+        
+        // Buscamos la posición del primer Punto
+        int Punto = email.indexOf('.', Arroba);
 
-        if (arrobaPos != -1 && puntoPos != -1) {
-            // Extraer el texto entre '@' y el primer '.'
-            String dominio = email.substring(arrobaPos + 1, puntoPos);
+        if (Arroba != -1 && Punto != -1) {
+            // Extraemos el texto entre la Arroba y el Punto
+            String dominio = email.substring(Arroba + 1, Punto);
             System.out.println("Dominio: " + dominio);
         } else {
+            // En el caso de que introduzcamos un email erróneo, que muestre el siguiente mensaje
             System.out.println("Email no válido.");
         }
         
 //        Segunda versión que contemple que pueda haber varios puntos en el dominio (Ejemplo: info@clientes.mundo-r.com mostraría clientes.mundo-r )
-//        // Buscar la posición de '@' y del último '.' después de '@'
-//        int arrobaPos = email.indexOf('@');
-//        int ultimoPuntoPos = email.lastIndexOf('.');
+//        // Buscamos la posición de la Arroba
+//        int Arroba = email.indexOf('@');
+
+//        // Buscamos la posición del último Punto después de la Arroba
+//        int Punto = email.lastIndexOf('.');
 //
-//        if (arrobaPos != -1 && ultimoPuntoPos != -1 && ultimoPuntoPos > arrobaPos) {
-//            // Extraer el texto entre '@' y el último '.'
-//            String dominio = email.substring(arrobaPos + 1, ultimoPuntoPos);
+//        if (Arroba != -1 && Punto != -1 && Punto > Arroba) {
+//            // Extraemos el texto entre la Arroba y el Punto
+//            String dominio = email.substring(Arroba + 1, Punto);
 //            System.out.println("Dominio: " + dominio);
 //        } else {
+//            // En el caso de que introduzcamos un email erróneo, que muestre el siguiente mensaje
 //            System.out.println("Email no válido.");
 //        }
     }
