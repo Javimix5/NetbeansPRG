@@ -31,7 +31,7 @@ public class JgpT05r01 {
 
         double precio = calcularCoste(peso, distancia);
 
-        System.out.println("El coste del envio sera de: " + precio + "euros");
+        System.out.println("El coste del envio sera de: " + String.format("%.2f", precio) + " euros");
 
     }
 
