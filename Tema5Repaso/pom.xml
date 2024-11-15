@@ -9,6 +9,6 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>22</maven.compiler.source>
         <maven.compiler.target>22</maven.compiler.target>
-        <exec.mainClass>tema5repaso.JgpT05Rep01</exec.mainClass>
+        <exec.mainClass>tema5repaso.JgpT05r01</exec.mainClass>
     </properties>
 </project>
