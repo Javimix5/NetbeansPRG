@@ -19,35 +19,26 @@ que se hagan menos llamadas recursivas. Por ejemplo, 2 * 4 es igual a 4 * 2.
         Scanner teclado = new Scanner(System.in);
 
         int num1, num2;
-
-        System.out.println("Introduce dos numero para multiplicar de forma recursiva: ");
-        System.out.println("Numero 1: ");
-        num1 = teclado.nextInt();
-        System.out.println("Numero 2: ");
-        num2 = teclado.nextInt();
-
-        int resultado = Optimizar(num1, num2);
-        System.out.println(num1 + " * " + num2 + " = " + resultado);
         
+        System.out.println("Introduce el primer numero: ");
+        num1 = teclado.nextInt();
+        System.out.println("Introduce el primer numero: ");
+        num2 = teclado.nextInt();
+        
+        System.out.println("La multiplicacion de " + num1 + " y " + num2 + " es: " + multiplicar(num1, num2));
+
     }
 
     public static int multiplicar(int a, int b) {
-
-        if (b == 0) {
+        // Asegurar que el mayor número sea el primero para reducir llamadas recursivas
+        if (a < b) {
+            return multiplicar(b, a);
+        }
+        // Caso base: cuando el segundo número (num2) es 1
+        if (b == 1) {
             return a;
-        } else {
-            return a + multiplicar(a, (b - 1));
         }
-        
-    }
-
-    public static int Optimizar(int a, int b){
-    
-        if (a < b){
-        return multiplicar(b, a);
-        } else  {
-        return multiplicar(a, b);
-        }
-        
+        // Llamada recursiva: sumar a con el resultado de multiplicar a por (num2-1)
+        return a + multiplicar(a, b - 1);
     }
 }
