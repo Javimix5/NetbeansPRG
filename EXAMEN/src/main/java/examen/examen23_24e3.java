@@ -28,6 +28,14 @@ public class examen23_24e3 {
     public static void main(String[] args) {
         Scanner teclado = new Scanner(System.in);
 
+        Prenda prenda1 = new Prenda("pantalon", 38, 'M', 50.0, 21.0);
+        
+        // Crear un objeto usando el constructor alternativo
+        Prenda prenda2 = new Prenda("camisa", 30.0); // Tipo no válido
+        
+        // Imprimir los valores de los objetos usando toString
+        System.out.println(prenda1.toString());
+        System.out.println(prenda2.toString());
         
         
     }
