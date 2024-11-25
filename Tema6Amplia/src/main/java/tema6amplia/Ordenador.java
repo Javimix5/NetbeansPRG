@@ -34,15 +34,6 @@ public class Ordenador {
         }
     }
 
-    public static boolean apagarPantalla(boolean pantalla) {
-        if (pantalla == false) {
-            return false;
-        } else {
-            return false;
-            
-        }
-    }
-
     public void comprobarEstado() {
         System.out.print("\nEl estado del ordenador es el siguiente:");
         System.out.print("\nMarca: " + marca);
@@ -110,6 +101,36 @@ public class Ordenador {
 
     public void setPantalla(boolean pantalla) {
         this.pantalla = pantalla;
+    }
+
+    /*Estos son los métodos solicitados en el ejercicio 2*/
+    
+    public void apagarOrdenador() {
+        if (!encendido) {
+            System.out.println("El ordenador ya está apagado");
+        } else {
+            encendido = false;
+            pantalla = false;
+            System.out.println("El ordenador ha sido apagado");
+        }
+    }
+
+    public void desactivarPantalla() {
+        if (!pantalla) {
+            System.out.println("La pantalla ya está desactivada");
+        } else {
+            pantalla = false;
+            System.out.println("La pantalla ha sido desactivada");
+        }
+    }
+
+    public void activarPantalla() {
+        if (pantalla) {
+            System.out.println("La pantalla ya está activada");
+        } else {
+            pantalla = true;
+            System.out.println("La pantalla ha sido activada");
+        }
     }
 
     @Override
