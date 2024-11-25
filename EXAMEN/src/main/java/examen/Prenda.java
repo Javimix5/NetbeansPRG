@@ -69,14 +69,14 @@ public class Prenda {
     @Override
     public String toString() {
         return "Prenda {"
-                + "tipo='" + tipo + '\''
-                + ", talla=" + talla
-                + ", sexo=" + sexo
-                + ", precioSinIva=" + precioSinIva
-                + ", iva=" + iva
-                + ", precioConIva=" + precioConIva
-                + ", referencia=" + referencia
-                + ", stockPrendas=" + stockPrendas
+                + "tipo= '" + tipo + '\''
+                + ", talla= " + talla
+                + ", sexo= " + sexo
+                + ", precio sin IVA= " + precioSinIva
+                + ", iva= " + iva
+                + ", precio con IVA= " + precioConIva
+                + ", Referencia= " + referencia
+                + ", Stock Prendas= " + stockPrendas
                 + '}';
     }
 }
