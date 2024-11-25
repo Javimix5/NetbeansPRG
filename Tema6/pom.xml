@@ -11,4 +11,5 @@
         <maven.compiler.target>22</maven.compiler.target>
         <exec.mainClass>tema6.JgpT6eMOVIL</exec.mainClass>
     </properties>
+    <name>ExamenMovil</name>
 </project>
