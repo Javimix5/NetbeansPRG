@@ -22,25 +22,24 @@ package tema6;
  *
  * @author javier.gonzalezprado
  */
+import java.util.Scanner;
+
 public class MovilPrepago {
 
     public long numeroMovil;
-    final private float costeEstablecLlamada;
     final private float costeMinutoLlamada;
     final private float costeConsumoMB;
     private float saldo;
 
-    MovilPrepago(long nM, float cEL, float cML, float cMB, float s) {
+    MovilPrepago(long nM, float cML, float cMB, float s) {
         numeroMovil = nM;
-        costeEstablecLlamada = cEL;
         costeMinutoLlamada = cML;
         costeConsumoMB = cMB;
         saldo = s;
     }
 
     public void efectuarLlamada(int segundos) {
-        saldo -= Math.round(
-                (costeEstablecLlamada + costeMinutoLlamada / 60f * segundos) * 100f) / 100f;
+        saldo -= Math.round((costeMinutoLlamada / 60f * segundos) * 100f) / 100f;
         if (saldo < 0) {
             saldo = 0;
         }
@@ -84,7 +83,8 @@ public class MovilPrepago {
 
     @Override
     public String toString() {
-        return "MovilPrepago{" + "numeroMovil=" + numeroMovil + ", costeEstablecLlamada=" + costeEstablecLlamada + ", costeMinutoLlamada=" + costeMinutoLlamada + ", costeConsumoMB=" + costeConsumoMB + ", saldo=" + saldo + '}';
+        return "MovilPrepago{" + "numeroMovil= " + numeroMovil + ", costeMinutoLlamada= " + costeMinutoLlamada + ", costeConsumoMB= " + costeConsumoMB + ", saldo= " + saldo + '}';
     }
+
     
 }
