@@ -152,9 +152,11 @@ public class JgpT6e09Fechas {
         teclado.nextLine(); // Limpiar buffer
         int domingos = 0;
         for (int mes = 1; mes <= 12; mes++) {
-            LocalDate primerDiaMes = LocalDate.of(anio, mes, 1);
-            if (primerDiaMes.getDayOfWeek() == DayOfWeek.SUNDAY) {
-                domingos++;
+            for (int dia = 1; dia <= LocalDate.of(anio, mes, 1).lengthOfMonth(); dia++) {
+                LocalDate DiaMes = LocalDate.of(anio, mes, dia);
+                if (DiaMes.getDayOfWeek().getValue() == 7) {
+                    domingos++;
+                }
             }
         }
         System.out.println("El año " + anio + " tiene " + domingos + " domingos.");
