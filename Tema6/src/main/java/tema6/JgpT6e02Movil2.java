@@ -1,20 +1,12 @@
 /*
- * 6.1- A partir de la clase MovilPrepago que te proporcionará el profesor, haz un programa en el que 
-se cree un teléfono con unas características determinadas y luego ejecute una serie de actividades 
-como recargar 10 euros, llamar 30 segundos, navegar 10MB, etc. Viendo cómo se va modificando el 
-saldo. 
-Las propiedades de un móvil prepago son: 
-- int numeroMovil (9 dígitos) 
-- float costeMinutoLlamada (euros, con dos decimales)
-- float costeConsumoMB (euros, con dos decimales) 
-- float saldo (euros, con dos decimales) 
-Tiene un único constructor con la siguiente firma: 
-MovilPrepago(long nM, float cML, float cMB, float s) 
-Los métodos son: 
-- void efectuarLlamada (int segundos): reduce el saldo. Si el saldo no es suficiente, se corta la llamada 
-- void navegar(int MB) análogo a efectuar una llamada 
-- boolean recargar (int importe): aumenta el saldo, debe ser múltiplo de 5 euros, sino devuelve false
-- float consultarSaldo () 
+ * 6.2- A partir de la clase MovilPrepago del ejercicio anterior, crea un programa en el que el usuario 
+dé de alta un teléfono con unas características determinadas y luego le permita mediante un menú 
+hacer operaciones como consultar saldo, recarga, hacer llamada, navegar. Se proporciona un 
+modelo (modeloMenu) a modo de esqueleto, con el menú y las funciones necesarias, en las que solo 
+tienes rellenar los huecos. 
+Es similar al anterior, primero creamos un móvil: 
+ MovilPrepago miMovil = new MovilPrepago(900900900L, 0.1f, 0.5f, 10f); 
+O pidiéndole los datos al usuario. Luego ya el menú sobre ese móvil. 
  */
 package tema6;
 
@@ -87,7 +79,7 @@ public class JgpT6e02Movil2 {
         System.out.println("0 Salir del programa");
         try {                  //si introduce un valor no entero haría return 999
             return Integer.parseInt(teclado.next());
-        } catch (Exception e) {
+        } catch (NumberFormatException e) {
             return 999;
         }
     }
