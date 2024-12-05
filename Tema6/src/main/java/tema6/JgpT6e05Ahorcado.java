@@ -31,8 +31,44 @@ public class JgpT6e05Ahorcado {
     public static void main(String[] args) {
         Scanner teclado = new Scanner(System.in);
 
-        System.out.println("Vamos a jugar al Ahorcado");
-        
-    }
+        System.out.println("Bienvenido al juego del Ahorcado!");
+        System.out.print("Introduce la palabra o frase a adivinar: ");
+        String txtAdivinar = teclado.nextLine();
 
+        System.out.print("¿Deseas proporcionar una pista? (sí/no): ");
+        String deseaPista = teclado.nextLine().trim().toLowerCase();
+
+        Ahorcado juego; // Declaración de la instancia del juego
+
+        if (deseaPista.equals("sí")) {
+            System.out.print("Introduce la pista: ");
+            String txtPista = teclado.nextLine();
+            juego = new Ahorcado(txtAdivinar, txtPista); // Usar constructor con pista
+        } else {
+            juego = new Ahorcado(txtAdivinar); // Usar constructor sin pista
+        }
+
+        // Bucle principal del juego
+        while (!juego.adivinada() && !juego.perdio()) {
+            System.out.println("\nEstado del juego:");
+            juego.pintar(); // Mostrar el tablero
+            char letra = juego.leerLetra(); // Leer una letra del jugador
+
+            if (juego.probarLetra(letra)) {
+                System.out.println("¡Correcto! La letra está en la frase.");
+            } else {
+                System.out.println("Incorrecto. La letra no está en la frase.");
+            }
+        }
+
+        // Mostrar el resultado final
+        System.out.println("\nEstado final del juego:");
+        juego.pintar();
+
+        if (juego.adivinada()) {
+            System.out.println("¡Felicidades! Has adivinado la frase.");
+        } else if (juego.perdio()) {
+            System.out.println("Lo siento, has perdido. Mejor suerte la próxima vez.");
+        }
+    }
 }
