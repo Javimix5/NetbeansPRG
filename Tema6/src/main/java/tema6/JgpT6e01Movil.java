@@ -40,8 +40,11 @@ public class JgpT6e01Movil {
             boolean importe = movil1.recargar(teclado.nextInt());
         }
         System.out.println("Saldo actual: " + movil1.consultarSaldo());
-        System.out.println("Se realizara una llamada de 30 segundos");
-        movil1.efectuarLlamada(30);
+        System.out.println("Duracion de la llamada: ");
+        movil1.efectuarLlamada(teclado.nextInt());
+        System.out.println("Saldo actual: " + movil1.consultarSaldo());
+        System.out.println("Para navegar por internet, indica los MB usados: ");
+        movil1.navegar(teclado.nextInt());
         System.out.println("Saldo actual: " + movil1.consultarSaldo());
     }
 
