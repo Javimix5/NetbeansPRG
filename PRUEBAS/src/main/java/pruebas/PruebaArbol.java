@@ -17,6 +17,7 @@ public class PruebaArbol {
 
             }
             System.out.print("\n");
+            System.out.println("");
         }
     }
 }
