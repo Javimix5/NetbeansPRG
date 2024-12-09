@@ -20,15 +20,19 @@ public class ArbolNavidad {
          
          System.out.println("Dime el tamaño de altura del arbol: ");
          n = teclado.nextInt();
+        
          
+        //
         for (int i = 0; i < n; i++) {
             for (int j = n - i; j > 1; j--) System.out.print(" ");
             for (int j = 0; j <= i * 2; j++) System.out.print("*");
             System.out.println();
         }
         for (int i = 0; i < n / 2; i++) {
-            for (int j = 0; j < n - 1; j++) System.out.print(" ");
-            System.out.println("***");
+            for (int j = 0; j < n - 2; j++) {
+                System.out.print(" ");
+        }
+            System.out.println("| |");
         }
     }
 }
