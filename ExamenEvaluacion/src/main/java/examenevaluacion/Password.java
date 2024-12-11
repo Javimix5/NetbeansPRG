@@ -42,7 +42,7 @@ public class Password {
         return "Password{" + "longitud=" + longitud + ", contrase\u00f1a=" + contraseña + '}';
     }
     
-   public boolean esFuerte(){
+   public boolean esFuerte(){ //Verifica si es Fuerte la contraseña
    int mayusculas = 0, minusculas = 0, numeros =0;
    
    for (int i = 0; i < contraseña.length(); i++) {
@@ -66,11 +66,11 @@ public class Password {
            int tipo = random.nextInt(3);
            
            if (tipo == 0)
-               nuevaContraseña.append((char) ('A' + random.nextInt(26)));
+               nuevaContraseña.append((char) ('A' + random.nextInt(26))); //Indica todo el abecedario en Mayúsculas
        else if (tipo == 1)
-           nuevaContraseña.append((char) ('a' + random.nextInt(26)));
+           nuevaContraseña.append((char) ('a' + random.nextInt(26))); //Indica todo el abecedario en Minúsculas
        else 
-   nuevaContraseña.append(random.nextInt(10));
+   nuevaContraseña.append(random.nextInt(10)); //Indica los 10 primero números 0-9
        }
    return nuevaContraseña.toString();
    }

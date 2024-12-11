@@ -28,7 +28,7 @@ public class Ejercicio1 {
 
         for (int i = 1; i < informe.length() - 1; i++) {
 
-            int anterior = Character.getNumericValue(informe.charAt(0));
+            int anterior = Character.getNumericValue(informe.charAt(0)); //convierte el String en Int
 
             int actual = Character.getNumericValue(informe.charAt(i));
 

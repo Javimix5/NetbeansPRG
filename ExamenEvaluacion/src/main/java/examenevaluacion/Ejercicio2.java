@@ -64,7 +64,8 @@ while (!cadena1.isEmpty() && !cadena2.isEmpty()) {
  
     
     private static String eliminarCaracter (String cadena, char caracter){
-        int indice = cadena.indexOf(caracter);
+        int indice = cadena.indexOf(caracter); //Devolve el índice de la primera o de la última aparición de el elemento introducido. Se no está, devolve -1.
+
         if (indice == -1) {
             return cadena;
         }

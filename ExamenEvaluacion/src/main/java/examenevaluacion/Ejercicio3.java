@@ -20,7 +20,7 @@ public class Ejercicio3 {
         do {
             opcion = pintarMenu();
             switch (opcion) {
-               
+
                 case 1:
                     if (Usuario.isUsuarioCreado()) {
                         System.out.println("Ya existe un usuario. Eliminalo antes de crear otro.");
@@ -29,24 +29,31 @@ public class Ejercicio3 {
                         String nombre = teclado.nextLine();
                         System.out.println("Quieres introducir la contraseña? (s/n): ");
                         char eleccion = teclado.nextLine().charAt(0);
-                        Password password;
-                        
+                        Password password = null;
+
                         if (eleccion == 's' || eleccion == 'S') {
                             System.out.println("Introduce la contraseña: ");
                             String contraseña = teclado.nextLine();
                             password = new Password(contraseña);
 
+                            if (password.esFuerte()) {
+                                break;
+                            } else {
+                                System.out.println("La constraseña no es fuerte. Debe tener más de 2 mayúsculas y minúsculas y 3 números");
+                            }
+
                         } else {
                             System.out.println("Introduce la longitud de la contraseña: ");
                             int longitud = teclado.nextInt();
                             password = new Password(longitud);
-                        }
-                     /*   
-                        usuario = new Usuario(nombre,password);
-                        System.out.println("Usuario creado");*/
+
+                        }/*
+
+                        usuario = new Usuario(nombre, password);
+                        System.out.println("Usuario creado");           Tengo un error en esta línea que hace referencia a password */ 
                     }
                     break;
-                   
+
                 case 2:
                     if (!Usuario.isUsuarioCreado()) {
                         System.out.println("No hay ningún usuario");
@@ -65,18 +72,18 @@ public class Ejercicio3 {
                         }
                     }
                     break;
-                    
+
                 case 3:
-                    if (!Usuario.isUsuarioCreado()){
+                    if (!Usuario.isUsuarioCreado()) {
                         System.out.println("No hay ningun usuario.");
-                    }else{
-        System.out.println(usuario.toString());
-                }
-                break;
-                    
+                    } else {
+                        System.out.println(usuario.toString());
+                    }
+                    break;
+
                 case 0:
                     salir = true;
-                    
+
                 default:
                     System.out.println("Opción incorrecta");
             }
