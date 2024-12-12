@@ -36,21 +36,21 @@ public class Ejercicio3 {
                             String contraseña = teclado.nextLine();
                             password = new Password(contraseña);
 
-                            if (password.esFuerte()) {
-                                break;
-                            } else {
-                                System.out.println("La constraseña no es fuerte. Debe tener más de 2 mayúsculas y minúsculas y 3 números");
-                            }
+                            do {
+                                if (password.esFuerte()) {
+                                    usuario = new Usuario(nombre, password.toString());
+                                    System.out.println("Usuario creado");
+                                } else {
+                                    System.out.println("La constraseña no es fuerte. Debe tener más de 2 mayúsculas y minúsculas y 3 números");
+
+                                }
+                            } while (!password.esFuerte());
 
                         } else {
                             System.out.println("Introduce la longitud de la contraseña: ");
                             int longitud = teclado.nextInt();
                             password = new Password(longitud);
-
-                        }/*
-
-                        usuario = new Usuario(nombre, password);
-                        System.out.println("Usuario creado");           Tengo un error en esta línea que hace referencia a password */ 
+                        }
                     }
                     break;
 
