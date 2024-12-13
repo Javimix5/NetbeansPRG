@@ -34,14 +34,11 @@ public class Usuario {
     
     public static boolean isUsuarioCreado(){
     
-    return usuarioCreado;
+    return usuarioCreado = true;
     }
     
     public static void eliminarUsario(){
     usuarioCreado = false;
     }
-    
-    
-    
 
 }//Fin clase
