@@ -1,115 +1,111 @@
 package examenevaluacion;
 
-import java.util.Scanner;
-
 /**
  *
  * @author Javier González Prados
  */
+import java.util.Scanner;
+
 public class Ejercicio3 {
-
-    static Scanner teclado = new Scanner(System.in);
-
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        Usuario usuario = null;
 
-        Password contraseña = new Password();
-        Usuario usuario = new Usuario();
-        menu(usuario, contraseña);
+        while (true) {
+            // Menú
+            System.out.println("\nMenu:");
+            System.out.println("1. Crear usuario");
+            System.out.println("2. Eliminar usuario");
+            System.out.println("3. Mostrar usuario");
+            System.out.println("4. Salir");
+            System.out.print("Elige una opción: ");
+            int opcion = scanner.nextInt();
+            scanner.nextLine();  // Limpiar buffer
 
-    }
-
-    static void menu(Usuario usuario, Password contraseña) {
-
-        boolean salir = false;
-        int opcion;
-
-        do {
-            opcion = pintarMenu();
             switch (opcion) {
-
                 case 1:
-                    System.out.println("Elegiste Crear usuario");
-                    if (Usuario.isUsuarioCreado() == true) {
-                        System.out.println("Ya existe un usuario. Eliminalo antes de crear otro.");
+                    if (usuario != null) {
+                        System.out.println("Ya existe un usuario creado.");
                         break;
+                    }
 
-                    } else {
-                        System.out.println("Introduce el nombre de usuario: ");
-                        String nombre = teclado.nextLine();
-                        System.out.println("Quieres introducir la contraseña? (s/n): ");
-                        char eleccion = teclado.nextLine().charAt(0);
-                        Password password = null;
+                    System.out.print("Introduce el nombre de usuario: ");
+                    String nombre = scanner.nextLine();
 
-                        if (eleccion == 's' || eleccion == 'S') {
-                            System.out.println("Introduce la contraseña: ");
-                            contraseña.setContraseña(teclado.next());
-                            System.out.println("Contraseña fuerte = " + contraseña.esFuerte());
+                    System.out.println("¿Cómo deseas establecer la contraseña?");
+                    System.out.println("1. Introducir contraseña manualmente");
+                    System.out.println("2. Generarla aleatoriamente");
+                    System.out.print("Elige una opción: ");
+                    int opcionContraseña = scanner.nextInt();
+                    scanner.nextLine();  // Limpiar buffer
 
-                        } else {
-                            System.out.println("Se genera automaticamente");
-                            contraseña.setContraseña(contraseña.generarPassword(10));
-                            String contraseñaUsuario = password.getContraseña();
-                            System.out.println("Su contraseña es: " + contraseñaUsuario);
+                    Password pass = null;
+
+                    if (opcionContraseña == 1) {
+                        boolean contraseñaFuerte = false;
+                        while (!contraseñaFuerte) {
+                            System.out.print("Introduce la contraseña: ");
+                            String contraseña = scanner.nextLine();
+                            pass = new Password(contraseña);
+                            if (pass.esFuerte()) {
+                                contraseñaFuerte = true;
+                            } else {
+                                System.out.println("La contraseña no es fuerte. Debe tener más de 2 mayúsculas, 2 minúsculas y 3 números.");
+                            }
                         }
-                        usuario.crearUsuario();
-                        usuario.setNombreUsuario(nombre);
+                    } else if (opcionContraseña == 2) {
+                        System.out.print("Introduce la longitud de la contraseña: ");
+                        int longitud = scanner.nextInt();
+                        scanner.nextLine();  // Limpiar buffer
+                        pass = new Password(longitud);
+                        System.out.println("Contraseña generada: " + pass.getContraseña());
+                    }
+
+                    // Crear usuario
+                    try {
+                        usuario = new Usuario(nombre, pass);
+                        System.out.println("Usuario creado con éxito.");
+                    } catch (IllegalStateException e) {
+                        System.out.println(e.getMessage());
                     }
                     break;
 
                 case 2:
-                    System.out.println("Elegiste eliminar usuario");
-                    if (!Usuario.isUsuarioCreado()) {
-                        System.out.println("No hay ningún usuario");
+                    if (usuario == null) {
+                        System.out.println("No hay un usuario creado.");
                     } else {
-                        System.out.println("Introduce el nombre de usuario: ");
-                        String nombre = teclado.nextLine();
-                        System.out.println("Introduce la contraseña: ");
-                        String contraseñaEliminar = teclado.next();
+                        System.out.print("Introduce el nombre del usuario para eliminar: ");
+                        String nombreEliminar = scanner.nextLine();
+                        System.out.print("Introduce la contraseña del usuario para eliminar: ");
+                        String contraseñaEliminar = scanner.nextLine();
 
-                        if (usuario.getNombreUsuario().equals(nombre) && contraseña.getContraseña().equals(contraseñaEliminar)) {
-                            usuario.eliminarUsuario();
-                            System.out.println("Usuario eliminado con exito");
+                        if (usuario.getNombre().equals(nombreEliminar) && usuario.getPassword().getContraseña().equals(contraseñaEliminar)) {
+                            usuario = null;
+                            Usuario.eliminarUsuario();
+                            System.out.println("Usuario eliminado.");
                         } else {
-                            System.out.println("Nombre o contraseña incorrectos");
+                            System.out.println("Datos incorrectos.");
                         }
                     }
                     break;
 
                 case 3:
-                    System.out.println("Elegiste mostrar usuario");
-                    if (!usuario.isUsuarioCreado()) {
-                        System.out.println("No hay ningun usuario.");
-                    } else {
+                    if (usuario != null) {
                         System.out.println(usuario.toString());
-                        System.out.println(contraseña.toString());
-
+                    } else {
+                        System.out.println("No hay un usuario creado.");
                     }
                     break;
 
-                case 0:
-                    System.out.println("Elegiste salir");
-                    salir = true;
+                case 4:
+                    System.out.println("Saliendo...");
+                    scanner.close();
+                    return;
 
                 default:
-                    System.out.println("Opción incorrecta");
+                    System.out.println("Opción inválida.");
+                    break;
             }
-        } while (!salir);
-
-    }//fin main
-
-    private static int pintarMenu() {
-        Scanner teclado = new Scanner(System.in);
-
-        System.out.println("\n");
-        System.out.println("Elija una opción:");
-        System.out.println("1 Crear usuario");
-        System.out.println("2 eliminar usuario");
-        System.out.println("3 mostrar usuario");
-        System.out.println("0 Salir");
-        try {
-            return Integer.parseInt(teclado.nextLine());
-        } catch (Exception e) {
         }
-        return 999;
     }
-}//fin clase
+}

@@ -5,42 +5,37 @@ package examenevaluacion;
  * @author Javier González Prados
  */
 public class Usuario {
+    private String nombre;
+    private Password password;
+    private static boolean usuarioCreado = false;
 
-    private String nombreUsuario;
-
-    public static boolean usuarioCreado = false;
-
-    public Usuario() {
+    // Constructor
+    public Usuario(String nombre, Password password) {
+        if (usuarioCreado) {
+            throw new IllegalStateException("Ya existe un usuario creado.");
+        }
+        this.nombre = nombre;
+        this.password = password;
+        usuarioCreado = true;
     }
 
-    public Usuario(String nombreUsuario) {
-        this.nombreUsuario = nombreUsuario;
-        usuarioCreado=true;
+    // Métodos get
+    public String getNombre() {
+        return nombre;
     }
 
-    public String getNombreUsuario() {
-        return nombreUsuario;
+    public Password getPassword() {
+        return password;
     }
 
-    public void setNombreUsuario(String nombreUsuario) {
-        this.nombreUsuario = nombreUsuario;
-    }
-
-    public static boolean isUsuarioCreado() {
-        return usuarioCreado;
-    }
-
+    // Método toString
     @Override
     public String toString() {
-        return "Usuario{" + "nombre= " + getNombreUsuario() + '}';
+        return "Nombre: " + nombre + "\n" + password.toString();
     }
 
-    public void eliminarUsuario() {
+    // Método para eliminar usuario
+    public static void eliminarUsuario() {
         usuarioCreado = false;
     }
-
-    public boolean crearUsuario() {
-        return usuarioCreado = true;
-    }
-
-}//Fin clase
+}
