@@ -1,6 +1,32 @@
 package examenevaluacion;
 
-/**
+/**Programa una clase llamada Password que cumpla los siguientes requisitos:
+    • Debe tener dos atributos, longitud y contraseña.
+    • Debe implementar los siguientes constructores:
+        ◦ Un constructor vacío.
+        ◦ Un constructor con la longitud por parámetro. Generará una contraseña aleatoria con esa longitud.
+        ◦ Un constructor que recibe la contraseña por parámetro.
+          
+    • Los métodos que implementa serán:
+        ◦ Método get  para contraseña, longitud.
+        ◦ Método toString para mostrar el atributo contraseña.
+        ◦ esFuerte(): devuelve un booleano si es fuerte o no, para que sea fuerte debe tener mas de 2 mayúsculas, mas de 2 minúsculas y mas de 3 números.
+        ◦ generarPassword(): genera la contraseña del objeto con la longitud que se le haya pasado como parámetro. 
+          
+      Programa otra clase llamada Usuario que cumpla las siguientes condiciones:
+    • Debe tener los atributos nombre y password (de tipo Password).
+    • Un atributo estático usuarioCreado de tipo boolean para determinar si hay un usuario creado.
+    • Tendrá un constructor que reciba los atributos nombre y password por parámetro.
+    • Método get para nombre y contraseña.
+    • Método toString para imprimir el nombre y la contraseña.
+      
+      Clase ejecutable (En un fichero aparte):
+    • Crea un menú con las opciones: crear usuario, eliminar usuario, mostrar usuario y salir.
+    • Al elegir la opción crear usuario el programa debe pedir el nombre y a continuación debe permitir elegir entre introducir una contraseña o generarla de forma aleatoria. 
+    • El programa debe validar si la contraseña introducida por el usuario es fuerte y volver a pedirla si no lo es.
+    • El programa no debe permitir crear más de un usuario.
+    • Si el usuario elige la opción de borrar usuario, el programa pedirá el nombre y la contraseña, si son válidos eliminará el usuario.
+    • La opción mostrar usuario hará uso de los métodos toString.
  *
  * @author Javier González Prados
  */
