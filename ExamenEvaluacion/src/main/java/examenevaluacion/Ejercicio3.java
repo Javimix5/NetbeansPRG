@@ -12,18 +12,27 @@ public class Ejercicio3 {
 
     public static void main(String[] args) {
 
+        Password contraseña = new Password();
+        Usuario usuario = new Usuario();
+        menu(usuario, contraseña);
+
+    }
+
+    static void menu(Usuario usuario, Password contraseña) {
+
         boolean salir = false;
         int opcion;
-
-        Usuario usuario = null;
 
         do {
             opcion = pintarMenu();
             switch (opcion) {
 
                 case 1:
-                    if (Usuario.isUsuarioCreado()) {
+                    System.out.println("Elegiste Crear usuario");
+                    if (Usuario.isUsuarioCreado() == true) {
                         System.out.println("Ya existe un usuario. Eliminalo antes de crear otro.");
+                        break;
+
                     } else {
                         System.out.println("Introduce el nombre de usuario: ");
                         String nombre = teclado.nextLine();
@@ -33,39 +42,32 @@ public class Ejercicio3 {
 
                         if (eleccion == 's' || eleccion == 'S') {
                             System.out.println("Introduce la contraseña: ");
-                            String contraseña = teclado.nextLine();
-                            password = new Password(contraseña);
-
-                            do {
-                                if (password.esFuerte()) {
-                                    usuario = new Usuario(nombre, password.toString());
-                                    System.out.println("Usuario creado");
-                                } else {
-                                    System.out.println("La constraseña no es fuerte. Debe tener más de 2 mayúsculas y minúsculas y 3 números");
-
-                                }
-                            } while (!password.esFuerte());
+                            contraseña.setContraseña(teclado.next());
+                            System.out.println("Contraseña fuerte = " + contraseña.esFuerte());
 
                         } else {
-                            System.out.println("Introduce la longitud de la contraseña: ");
-                            int longitud = teclado.nextInt();
-                            password = new Password(longitud);
+                            System.out.println("Se genera automaticamente");
+                            contraseña.setContraseña(contraseña.generarPassword(10));
+                            String contraseñaUsuario = password.getContraseña();
+                            System.out.println("Su contraseña es: " + contraseñaUsuario);
                         }
+                        usuario.crearUsuario();
+                        usuario.setNombreUsuario(nombre);
                     }
                     break;
 
                 case 2:
+                    System.out.println("Elegiste eliminar usuario");
                     if (!Usuario.isUsuarioCreado()) {
                         System.out.println("No hay ningún usuario");
                     } else {
                         System.out.println("Introduce el nombre de usuario: ");
                         String nombre = teclado.nextLine();
                         System.out.println("Introduce la contraseña: ");
-                        String contraseña = teclado.nextLine();
+                        String contraseñaEliminar = teclado.next();
 
-                        if (usuario.getNombre().equals(nombre) && usuario.getPassword().equals(contraseña)) {
-                            Usuario.eliminarUsario();
-                            usuario = null;
+                        if (usuario.getNombreUsuario().equals(nombre) && contraseña.getContraseña().equals(contraseñaEliminar)) {
+                            usuario.eliminarUsuario();
                             System.out.println("Usuario eliminado con exito");
                         } else {
                             System.out.println("Nombre o contraseña incorrectos");
@@ -74,14 +76,18 @@ public class Ejercicio3 {
                     break;
 
                 case 3:
-                    if (!Usuario.isUsuarioCreado()) {
+                    System.out.println("Elegiste mostrar usuario");
+                    if (!usuario.isUsuarioCreado()) {
                         System.out.println("No hay ningun usuario.");
                     } else {
                         System.out.println(usuario.toString());
+                        System.out.println(contraseña.toString());
+
                     }
                     break;
 
                 case 0:
+                    System.out.println("Elegiste salir");
                     salir = true;
 
                 default:
@@ -91,30 +97,19 @@ public class Ejercicio3 {
 
     }//fin main
 
-    static int pintarMenu() {
+    private static int pintarMenu() {
+        Scanner teclado = new Scanner(System.in);
+
         System.out.println("\n");
         System.out.println("Elija una opción:");
         System.out.println("1 Crear usuario");
         System.out.println("2 eliminar usuario");
         System.out.println("3 mostrar usuario");
         System.out.println("0 Salir");
-        return Integer.parseInt(teclado.nextLine());
+        try {
+            return Integer.parseInt(teclado.nextLine());
+        } catch (Exception e) {
+        }
+        return 999;
     }
-
-    static void tarea1() {
-        System.out.println("Elegiste Crear usuario");
-    }
-
-    static void tarea2() {
-        System.out.println("Elegiste eliminar usuario");
-    }
-
-    static void tarea3() {
-        System.out.println("Elegiste mostrar usuario");
-    }
-
-    static void tarea0() {
-        System.out.println("Elegiste salir");
-    }
-
 }//fin clase

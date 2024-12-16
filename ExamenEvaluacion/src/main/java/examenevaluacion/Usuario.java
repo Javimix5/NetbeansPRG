@@ -1,44 +1,46 @@
-
-
 package examenevaluacion;
-
 
 /**
  *
  * @author Javier González Prados
  */
-
 public class Usuario {
-    
-    private String nombre;
-    private String password;
-    private static boolean usuarioCreado = false;
 
-    public Usuario(String nombre, String password) {
-        this.nombre = nombre;
-        this.password = password;
+    private String nombreUsuario;
+
+    public static boolean usuarioCreado = false;
+
+    public Usuario() {
     }
 
-    public String getNombre() {
-        return nombre;
+    public Usuario(String nombreUsuario) {
+        this.nombreUsuario = nombreUsuario;
+        usuarioCreado=true;
     }
 
-    public String getPassword() {
-        return password;
+    public String getNombreUsuario() {
+        return nombreUsuario;
+    }
+
+    public void setNombreUsuario(String nombreUsuario) {
+        this.nombreUsuario = nombreUsuario;
+    }
+
+    public static boolean isUsuarioCreado() {
+        return usuarioCreado;
     }
 
     @Override
     public String toString() {
-        return "Usuario{" + "nombre=" + nombre + ", password=" + password + '}';
+        return "Usuario{" + "nombre= " + getNombreUsuario() + '}';
     }
-    
-    public static boolean isUsuarioCreado(){
-    
-    return usuarioCreado = true;
+
+    public void eliminarUsuario() {
+        usuarioCreado = false;
     }
-    
-    public static void eliminarUsario(){
-    usuarioCreado = false;
+
+    public boolean crearUsuario() {
+        return usuarioCreado = true;
     }
 
 }//Fin clase
