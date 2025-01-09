@@ -10,7 +10,7 @@ package tema7;
  */
 import java.util.Scanner;
 
-public class JgpT7e02 {
+public class JgpT7e02Maximo {
 
     static Scanner teclado = new Scanner(System.in);
 
