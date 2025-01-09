@@ -1,5 +1,5 @@
 /*
- * Ejercicio 2
+ * Ejercicio 2: Hacer un cuadrado vacio
  */
 package examen;
 

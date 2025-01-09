@@ -1,5 +1,5 @@
 /*
- * Ejercicio 1
+ * Ejercicio 1: Simulador de Cuenta hacia atras
  */
 package examen;
 
@@ -38,6 +38,6 @@ public class ejercicio1 {
                    
 
                 }
-            }
+            }System.out.println("Se acabo");
         }
     }
