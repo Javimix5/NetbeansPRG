@@ -39,8 +39,9 @@ public class JgpT7e02Maximo {
     int max = Integer.MIN_VALUE;
     
         for (int i : array) {
-            if (i > max);
+            if (i > max){
             max =i;
+            }
         }
         return max;
     }
