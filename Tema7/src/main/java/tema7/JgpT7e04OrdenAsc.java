@@ -27,6 +27,10 @@ public class JgpT7e04OrdenAsc {
             lista[i] = teclado.nextInt();
 
         }
+        
+        System.out.println("Los enteros introducidos son estos:");
+        System.out.println(Arrays.toString(lista));
+        
         Orden(lista);
         System.out.println("El orden ascendente es: " + Arrays.toString(lista));
 
