@@ -15,22 +15,22 @@ public class JgpT03E19 {
 
         Scanner teclado = new Scanner(System.in);
 
-        int n = 1, temp;
+        int n = 1, num;
 
         System.out.println("Introduce numeros en orden, en caso de introducir 0 o esten desordenados se parara el proceso");
-        temp = teclado.nextInt();
+        num = teclado.nextInt();
 
-        while ((n != 0) || (temp != 0)) {
+        while ((n != 0) || (num != 0)) {
             System.out.println("Introduce otro numero: ");
             n = teclado.nextInt();
 
-            if (n > temp) {
+            if (n > num) {
                 System.out.println("Estan en orden");
 
             } else {
                 System.out.println("No esta en orden");
             }
-            temp = n;
+            num = n;
 
         }
     }
