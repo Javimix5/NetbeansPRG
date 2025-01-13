@@ -1,5 +1,5 @@
 /*
-Ejercicio 12 - Crea un programa que verifique si dos arrays son iguales (tienen los mismos elementos en el mismo orden.
+Ejercicio 9 - Comprueba si esta un array ordenado ascendentemente.
  */
 package tema7;
 
@@ -12,35 +12,45 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 public class JgpT7e09CheckOrdenAsc {
-    
+
     static Scanner teclado = new Scanner(System.in);
-    
+
     public static void main(String[] args) {
-        
-        int[] lista = {0, 1, 2, 3, 4, 5};
-        
-        int[] lista2 = {0, 1, 2, 3, 4, 5};
-        
+
+        System.out.println("Introduca cuantos valores deseas");
+        int tamaño = teclado.nextInt();
+
+        int[] lista = new int[tamaño];
+
+        for (int i = 0; i < lista.length; i++) {
+            System.out.println("Introduce el valor para la posicion: " + i);
+            lista[i] = teclado.nextInt();
+
+        }
+
+        System.out.println("Los enteros introducidos son estos:");
         System.out.println(Arrays.toString(lista));
-        System.out.println(Arrays.toString(lista2));
-        
-        System.out.println("Son iguales? " + Iguales(lista, lista2));
-        
+
+        CheckOrden(lista);
+        System.out.println("El array está en orden ascendente: " + CheckOrden(lista));
+
     }// Fin main
 
-    //Función Comprobar si dos arrays son iguales
-    public static boolean Iguales(int[] array, int[] array2) {
-        boolean iguales = true;
-        
-        if (array.length == array2.length) {
-            for (int i = 0; i < array.length - 1; i++) {
-                if (array[i] != array2[i]) {
-                    iguales = false;
-                }
+    //Función Comprobar Orden Ascendente
+    public static boolean CheckOrden(int[] array) {
+        boolean creciente = true;
+
+        int anterior = Integer.MIN_VALUE;
+
+        for (int i : array) {
+            if (anterior < i) {
+                anterior = i;
+            } else {
+                creciente = false;
             }
-        } else {
-            iguales = false;
+
         }
-        return iguales;
+        return creciente;
     }
+
 }// Fin clase
