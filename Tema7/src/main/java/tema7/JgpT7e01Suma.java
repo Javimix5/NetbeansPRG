@@ -25,6 +25,7 @@ public class JgpT7e01Suma {
         for (int i = 0; i < lista.length; i++) {
             System.out.println("Introduce el valor para la posicion: " + i);
             lista[i] = teclado.nextInt();
+            
             suma += lista[i];
         }
         System.out.println("La suma de todos los valores es: " + suma);
