@@ -13,8 +13,10 @@ import java.util.Scanner;
  */
 public class Bucles09 {
 
+    static Scanner teclado = new Scanner(System.in);
+
     public static void main(String[] args) {
-        Scanner teclado = new Scanner(System.in);
+        
 
         int num, digitos = 0;
 

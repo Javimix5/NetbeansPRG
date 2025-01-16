@@ -13,9 +13,10 @@ import java.util.Scanner;
  * @author Javier.gonzalezprado
  */
 public class Bucles07 {
+    static Scanner teclado = new Scanner(System.in);
 
     public static void main(String[] args) {
-        Scanner teclado = new Scanner(System.in);
+        
 
         final int aleatorio;
         int contador = 4;

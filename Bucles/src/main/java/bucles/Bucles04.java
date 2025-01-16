@@ -11,9 +11,10 @@ import java.util.Scanner;
  * @author Javier.gonzalezprado
  */
 public class Bucles04 {
+    static Scanner teclado = new Scanner(System.in);
 
     public static void main(String[] args) {
-        Scanner teclado = new Scanner(System.in);
+        
 
         for (int i = 320; i >= 160; i -= 20) {
             System.out.println(i);

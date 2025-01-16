@@ -11,8 +11,10 @@ import java.util.Scanner;
  */
 public class Bucles01 {
 
+    static Scanner teclado = new Scanner(System.in);
+
     public static void main(String[] args) {
-        Scanner teclado = new Scanner(System.in);
+        
 
         for (int i = 5; i <= 100; i++) {
             if (i % 5 == 0) {
