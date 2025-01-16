@@ -1,7 +1,7 @@
 /*
 Ejercicio 12 - Crea un programa que verifique si dos arrays son iguales (tienen los mismos elementos en el mismo orden.
  */
-package tema7;
+package boletinarrays;
 
 /**
  *
@@ -11,7 +11,7 @@ package tema7;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class JgpT7e14Sumar2Array {
+public class JgpT7e12CheckIguales {
     
     static Scanner teclado = new Scanner(System.in);
     
@@ -24,25 +24,23 @@ public class JgpT7e14Sumar2Array {
         System.out.println(Arrays.toString(lista));
         System.out.println(Arrays.toString(lista2));
         
-        if (lista.length == lista2.length) {
-            int resultado[] = sumaTamaño(lista,lista2);
-            System.out.println("El resultado de la suma es: " + Arrays.toString(resultado) );
-        } else {
-            System.out.println("Error, no son del mismo tamaño");
-        }             
-       
+        System.out.println("Son iguales? " + Iguales(lista, lista2));
         
     }// Fin main
 
     //Función Comprobar si dos arrays son iguales
-    public static int [] sumaTamaño(int[] array, int[] array2) {
-        int j=0;
-        int [] resultado = new int[array.length];
+    public static boolean Iguales(int[] array, int[] array2) {
+        boolean iguales = true;
         
-        for (int i : resultado) {
-            resultado [j] = (array[j] + array2[j]);
-            j++;            
+        if (array.length == array2.length) {
+            for (int i = 0; i < array.length - 1; i++) {
+                if (array[i] != array2[i]) {
+                    iguales = false;
+                }
+            }
+        } else {
+            iguales = false;
         }
-        return resultado;
+        return iguales;
     }
 }// Fin clase

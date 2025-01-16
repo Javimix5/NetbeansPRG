@@ -1,16 +1,17 @@
 /*
-Ejercicio 15 - Crea un programa que reciba un array de enteros y diga si es un Palindromo.
+Ejercicio 7 - Dado un array de enteros, invierte el array.
  */
-package tema7;
+package boletinarrays;
 
 /**
  *
  * @author Javier González Prados
  *
  */
+import java.util.Arrays;
 import java.util.Scanner;
 
-public class JgpT7e15Palindromo {
+public class JgpT7e07InvertirArray {
 
     static Scanner teclado = new Scanner(System.in);
 
@@ -20,36 +21,36 @@ public class JgpT7e15Palindromo {
         int tamaño = teclado.nextInt();
 
         int[] lista = new int[tamaño];
-        int suma = 0;
 
         for (int i = 0; i < lista.length; i++) {
             System.out.println("Introduce el valor para la posicion: " + i);
             lista[i] = teclado.nextInt();
 
         }
-
-        System.out.println("El array es palindromo: " + esPalindromo(lista));
+        System.out.println("El array inicial es: " + Arrays.toString(lista));
+        
+        Invertir(lista);
+        System.out.println("El array invertido es: " + Arrays.toString(lista));
 
     }// Fin main
 
-    public static boolean esPalindromo(int[] array) {
-        boolean palindromo = true;
-        int j = (array.length) - 1;
+    //Función Orden Ascendente
+    public static void Invertir(int[] array) {
+        int orden = 0;
+        int j = (array.length - 1);
 
         for (int i = 0; i < array.length; i++) {
             if (i < j) {
-                if (array[i] == array[j]) {
-                    j--;
-                } else {
-                    palindromo = false;
-                    break;
-                }
+                orden = array[i];
+                array[i] = array[j];
+                array[j] = orden;
+                j--;
             } else {
                 break;
             }
 
         }
-        return palindromo;
+
     }
 
 }// Fin clase

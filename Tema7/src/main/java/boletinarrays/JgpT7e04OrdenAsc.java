@@ -1,7 +1,7 @@
 /*
 Ejercicio 4 - Dado un array de enteros, ordena de forma ascendente.
  */
-package tema7;
+package boletinarrays;
 
 /**
  *

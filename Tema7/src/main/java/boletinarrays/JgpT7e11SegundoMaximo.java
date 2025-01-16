@@ -1,7 +1,7 @@
 /*
 Ejercicio 11 - Dado un array de enteros, encuentra el Segundo valor máximo dentro del array.
  */
-package tema7;
+package boletinarrays;
 
 /**
  *

@@ -1,7 +1,7 @@
 /*
 Ejercicio 2 - Dado un array de enteros, encuentra el valor máximo dentro del array.
  */
-package tema7;
+package boletinarrays;
 
 /**
  *

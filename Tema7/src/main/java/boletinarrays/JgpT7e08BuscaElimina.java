@@ -1,7 +1,7 @@
 /*
 Ejercicio 8 - Programa que elimine un array y devuelva el array modificado.
  */
-package tema7;
+package boletinarrays;
 
 /**
  *

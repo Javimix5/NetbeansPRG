@@ -1,7 +1,7 @@
 /*
 Ejercicio 13 - Crea un programa que mueve todos los 0 de un array al final sin cambiar el orden de los demás elementos.
  */
-package tema7;
+package boletinarrays;
 
 /**
  *

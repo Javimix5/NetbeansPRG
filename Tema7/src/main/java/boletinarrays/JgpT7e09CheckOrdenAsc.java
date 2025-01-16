@@ -1,7 +1,7 @@
 /*
 Ejercicio 9 - Comprueba si esta un array ordenado ascendentemente.
  */
-package tema7;
+package boletinarrays;
 
 /**
  *

@@ -1,7 +1,7 @@
 /*
-Ejercicio 5 - Programa que reciba un array de enteros y cuente cuantas veces se repite un numero específico.
+Ejercicio 6 - Programa que reciba un array de enteros y busque un numero específico, si existe devuelve su indice; si no, devuelve -1.
  */
-package tema7;
+package boletinarrays;
 
 /**
  *
@@ -11,7 +11,7 @@ package tema7;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class JgpT7e05BuscaRepeticion {
+public class JgpT7e06BuscaIndice {
 
     static Scanner teclado = new Scanner(System.in);
 
@@ -27,27 +27,33 @@ public class JgpT7e05BuscaRepeticion {
             System.out.println("Introduce el valor para la posicion: " + i);
             lista[i] = teclado.nextInt();
 
-            
         }
         System.out.println("Escribe el numero que quieres buscar");
-            busca = teclado.nextInt();
+        busca = teclado.nextInt();
+
+        int indice = indiceNum(lista, busca);
+
+        if (indice != -1) {
+            System.out.println("El numero " + busca + " esta en la posicion " + indiceNum(lista, busca));
+        } else {
+           System.out.println("El numero " + busca + " no esta en la lista por lo tanto su posicion es " + indiceNum(lista, busca)); 
+        }
         
-        System.out.println("El numero " + busca + " esta repetido " + contarNum(lista, busca) + " veces.");
 
     }// Fin main
 
-    //Función Buscar y Contar Numero
-    public static int contarNum(int[] array, int busca) {
+    //Función Buscar e Devolver Indice numero
+    public static int indiceNum(int[] array, int busca) {
 
-        int contador = 0;
+        int indice = 0;
 
         for (int i : array) {
             if (i == busca) {
-                contador++;
+                return i;
             }
 
         }
-        return contador;
+        return -1;
 
     }
 

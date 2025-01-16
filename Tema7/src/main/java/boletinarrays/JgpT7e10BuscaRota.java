@@ -1,7 +1,7 @@
 /*
 Ejercicio 10 - Programa que rote un array de enteros a la derecha un numero especifico de veces.
  */
-package tema7;
+package boletinarrays;
 
 /**
  *
