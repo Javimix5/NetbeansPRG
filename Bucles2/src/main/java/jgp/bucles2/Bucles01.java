@@ -3,13 +3,15 @@
  */
 package jgp.bucles2;
 
-import com.sun.source.tree.BreakTree;
+
 import java.util.Scanner;
 
 public class Bucles01 {
 
+    static Scanner teclado = new Scanner(System.in);
+
     public static void main(String[] args) {
-        Scanner teclado = new Scanner(System.in);
+        
 
         int num = 0;
         
