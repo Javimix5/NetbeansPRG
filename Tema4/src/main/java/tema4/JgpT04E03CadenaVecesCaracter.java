@@ -6,7 +6,7 @@ package tema4;
 
 import java.util.Scanner;
 
-public class JgpT04E03 {
+public class JgpT04E03CadenaVecesCaracter {
 
     public static void main(String[] args) {
         Scanner teclado = new Scanner(System.in);
