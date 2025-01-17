@@ -12,6 +12,7 @@ package tema7;
  *
  */
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Scanner;
 
 public class JgpT07Ej24ComparaArrayList {
@@ -19,7 +20,7 @@ public class JgpT07Ej24ComparaArrayList {
     static Scanner teclado = new Scanner(System.in);
 
     public static void main(String[] args) {
-    
+
         // Creación de dos ArrayList
         ArrayList<String> lista1 = new ArrayList<>();
         ArrayList<String> lista2 = new ArrayList<>();
@@ -36,9 +37,11 @@ public class JgpT07Ej24ComparaArrayList {
         System.out.println("Contenido de la primera lista: " + lista1);
         System.out.println("Contenido de la segunda lista: " + lista2);
 
-    
+        //Imprime si son iguales ambos ArrayList
+        System.out.println("Ambos arrays tienen los mismos valores: " + sonIguales(lista1, lista2));
+
     } //Fin main
-    
+
     // Función para añadir elementos a un ArrayList
     public static void añadirElementosALista(Scanner teclado, ArrayList<String> lista) {
         boolean seguirAñadiendo = true;
@@ -57,19 +60,25 @@ public class JgpT07Ej24ComparaArrayList {
             }
         }
     }
-    
-    
+
     //Funcion Comparar Arraylist
-    public static void sonIguales(ArrayList<String> lista1, ArrayList<String> lista2){
-        boolean iguales =true;
-        
+    public static boolean sonIguales(ArrayList<String> lista1, ArrayList<String> lista2) {
+        boolean iguales = true;
+
         if (lista1.size() != lista2.size()) {
-            iguales=false;
-            
+            iguales = false;
+
         } else {
-            
+            ArrayList<String> Newlista1 = new ArrayList<>();
+            ArrayList<String> Newlista2 = new ArrayList<>();
+
+            Collections.sort(Newlista1);
+            Collections.sort(Newlista2);
+
+            iguales = Newlista1.equals(Newlista2);
+
         }
-            
-        
+        return iguales;
+
     }
 }
