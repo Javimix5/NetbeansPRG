@@ -11,10 +11,7 @@ public class CarritoCompra {
     ArrayList<ProductoCompra> productos;
     double totalCompra;
 
-    public CarritoCompra {
-        productos = new ArrayList<>();
-        totalCompra = 0.0;
-    }
+    
 
     // Método para mostrar el estado del carrito
     public void mostrarEstado() {
