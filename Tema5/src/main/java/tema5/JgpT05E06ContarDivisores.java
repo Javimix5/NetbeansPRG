@@ -2,7 +2,7 @@ package tema5;
 
 import java.util.Scanner;
 
-public class JgpT05E06 {
+public class JgpT05E06ContarDivisores {
 
     /*
 * Fernando Parga Fernandez

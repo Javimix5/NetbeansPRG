@@ -11,7 +11,7 @@ package tema5;
 
 import java.util.Scanner;
 
-public class JgpT05E01C {
+public class JgpT05E01CSumarLong {
 
     public static void main(String[] args) {
 

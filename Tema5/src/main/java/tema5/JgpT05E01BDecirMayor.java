@@ -9,7 +9,7 @@ package tema5;
 
 import java.util.Scanner;
 
-public class JgpT05E01B {
+public class JgpT05E01BDecirMayor {
 
     public static void main(String[] args) {
 

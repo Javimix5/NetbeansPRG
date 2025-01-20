@@ -10,7 +10,7 @@ package tema5;
 
 import java.util.Scanner;
 
-public class JgpT05E01A {
+public class JgpT05E01ABooleanPar {
 
     public static void main(String[] args) {
         Scanner teclado = new Scanner(System.in);

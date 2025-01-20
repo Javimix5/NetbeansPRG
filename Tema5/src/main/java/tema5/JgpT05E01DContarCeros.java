@@ -10,7 +10,7 @@ package tema5;
 
 import java.util.Scanner;
 
-public class JgpT05E01D {
+public class JgpT05E01DContarCeros {
 
     public static void main(String[] args) {
 

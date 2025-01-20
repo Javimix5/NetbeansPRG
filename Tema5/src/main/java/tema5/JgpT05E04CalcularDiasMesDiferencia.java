@@ -2,7 +2,7 @@ package tema5;
 
 import java.util.Scanner;
 
-public class JgpT05E04 {
+public class JgpT05E04CalcularDiasMesDiferencia {
 
     /*
 * Fernando Parga Fernandez

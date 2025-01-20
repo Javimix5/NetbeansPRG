@@ -2,7 +2,7 @@ package tema5;
 
 import java.util.Scanner;
 
-public class JgpT05E05 {
+public class JgpT05E05Factorial {
 
     /*
 * Fernando Parga Fernandez

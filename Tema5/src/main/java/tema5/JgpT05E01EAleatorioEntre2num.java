@@ -11,7 +11,7 @@ package tema5;
 
 import java.util.Scanner;
 
-public class JgpT05E01E {
+public class JgpT05E01EAleatorioEntre2num {
 
     public static void main(String[] args) {
 
