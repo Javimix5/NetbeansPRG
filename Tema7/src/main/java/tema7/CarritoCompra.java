@@ -1,21 +1,17 @@
-
-
 package tema7;
 
 import java.util.ArrayList;
-
 
 /**
  *
  * @author Javier González Prados
  */
-
 public class CarritoCompra {
-    
-private ArrayList<ProductoCompra> productos;
-    private double totalCompra;
 
-    public CarritoCompra() {
+    ArrayList<ProductoCompra> productos;
+    double totalCompra;
+
+    public CarritoCompra {
         productos = new ArrayList<>();
         totalCompra = 0.0;
     }
@@ -23,7 +19,7 @@ private ArrayList<ProductoCompra> productos;
     // Método para mostrar el estado del carrito
     public void mostrarEstado() {
         if (productos.isEmpty()) {
-            System.out.println("El carrito está vacío.");
+            System.out.println("El carrito esta vacio.");
         } else {
             for (ProductoCompra p : productos) {
                 System.out.println(p);
@@ -40,24 +36,26 @@ private ArrayList<ProductoCompra> productos;
     }
 
     // Método para añadir un producto
-    public void añadirProducto(ProductoCompra producto) {
+    public void anadirProducto(String codigo, String descripcion, double precioUnitario, int cantidad) {
+        ProductoCompra producto = new ProductoCompra(codigo, descripcion, precioUnitario, cantidad);
         productos.add(producto);
-        totalCompra += producto.getPrecioTotal();  // Actualizar el total
+        totalCompra += producto.precioTotal;
+        System.out.println("Producto anadido: " + producto);
     }
 
     // Método para eliminar un producto por código
     public void eliminarProducto(String codigo) {
         ProductoCompra productoAEliminar = null;
-        for (ProductoCompra p : productos) {
-            if (p.getCodigo().equals(codigo)) {
-                productoAEliminar = p;
+        for (ProductoCompra producto : productos) {
+            if (producto.codigo.equals(codigo)) {
+                productoAEliminar = producto;
                 break;
             }
         }
         if (productoAEliminar != null) {
             productos.remove(productoAEliminar);
-            totalCompra -= productoAEliminar.getPrecioTotal();  // Actualizar el total
-            System.out.println("Producto con código " + codigo + " eliminado.");
+            totalCompra -= productoAEliminar.precioTotal;
+            System.out.println("Producto eliminado: " + productoAEliminar);
         } else {
             System.out.println("Producto no encontrado.");
         }
@@ -67,4 +65,5 @@ private ArrayList<ProductoCompra> productos;
     public double getTotalCompra() {
         return totalCompra;
     }
+    
 }

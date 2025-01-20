@@ -11,11 +11,11 @@ package tema7;
 import java.util.ArrayList;
 
 public class ProductoCompra {
-    private String codigo;
-    private String descripcion;
-    private double precioUnitario;
-    private int cantidad;
-    private double precioTotal;
+    String codigo;
+    String descripcion;
+    double precioUnitario;
+    int cantidad;
+    double precioTotal;
 
     // Constructor
     public ProductoCompra(String codigo, String descripcion, double precioUnitario, int cantidad) {
