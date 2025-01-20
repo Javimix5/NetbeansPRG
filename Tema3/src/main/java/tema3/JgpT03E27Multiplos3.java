@@ -9,7 +9,7 @@ package tema3;
 
 import java.util.Scanner;
 
-public class JgpT03E27 {
+public class JgpT03E27Multiplos3 {
 
     public static void main(String[] args) {
 

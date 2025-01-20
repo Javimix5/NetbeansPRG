@@ -15,7 +15,7 @@ package tema3;
 
 import java.util.Scanner;
 
-public class JgpT03E20 {
+public class JgpT03E20NumPrimos {
 
     public static void main(String[] args) {
 

@@ -7,7 +7,7 @@ package tema3;
 
 import java.util.Scanner;
 
-public class JgpT03E18 {
+public class JgpT03E18Tablas1al9 {
 
     public static void main(String[] args) {
 
