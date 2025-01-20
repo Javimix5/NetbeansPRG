@@ -14,7 +14,7 @@ package tema4;
 
 import java.util.Scanner;
 
-public class JgpT04E14 {
+public class JgpT04E14FunStringBuilder {
 
     public static void main(String[] args) {
         Scanner teclado = new Scanner(System.in);

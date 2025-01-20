@@ -7,7 +7,7 @@ package tema4;
 
 import java.util.Scanner;
 
-public class JgpT04E01h {
+public class JgpT04E01hStringInt {
 
     public static void main(String[] args) {
         Scanner teclado = new Scanner(System.in);
