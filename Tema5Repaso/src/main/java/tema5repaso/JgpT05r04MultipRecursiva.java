@@ -2,7 +2,7 @@ package tema5repaso;
 
 import java.util.Scanner;
 
-public class JgpT05r04 {
+public class JgpT05r04MultipRecursiva {
 
     /*
     

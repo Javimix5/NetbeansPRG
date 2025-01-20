@@ -2,7 +2,7 @@ package tema5repaso;
 
 import java.util.Scanner;
 
-public class JgpT05r05 {
+public class JgpT05r05PotenciaRecurs {
 
     /*
     

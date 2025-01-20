@@ -2,7 +2,7 @@ package tema5repaso;
 
 import java.util.Scanner;
 
-public class JgpT05r06 {
+public class JgpT05r06MaxComunDivisorRecurs {
 
     /*
     
