@@ -31,6 +31,8 @@ public class JGP_Ex1_Ej1 {
 
     }// Fin main
 
+    
+    //funcion Incremento
     public static int vecesIncrementa(int[] mediciones) {
 
         int incremento = 0;
