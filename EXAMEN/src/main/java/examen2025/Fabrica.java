@@ -13,12 +13,18 @@ public class Fabrica {
  public Fabrica() {
      this.sucursales = new ArrayList<>();
  }
+ 
+ //funcion añadir Sucursal
  public void anhadirSucursal(Sucursal sucursal) {
      sucursales.add(sucursal);
  }
+ 
+ //funcion borrar Sucursal
  public void borrarSucursal(String nombre) {
      sucursales.removeIf(sucursal -> sucursal.nombre.equals(nombre));
  }
+ 
+ //funcion listar Sucursal
  public void listarSucursales() {
      for (Sucursal sucursal : sucursales) {
          sucursal.listarInstrumentos();

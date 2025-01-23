@@ -17,17 +17,20 @@ public Sucursal(String nombre) {
     this.instrumentos = new ArrayList<>();
 }
     
+//funcion añadir Instrumento
 public void añadirInstrumento(Instrumento instrumento) {
     instrumentos.add(instrumento);
 }
     
+//funcion listar Instrumento
 public void listarInstrumentos() {
     System.out.println("Listado de instrumentos " + nombre);
     for (Instrumento instrumento : instrumentos) {
         System.out.println(instrumento);
     }
 }
-    
+
+//funcion ordenar por tipo
 public ArrayList<Instrumento> instrumentosPorTipo(String tipo) {
     ArrayList<Instrumento> resultado = new ArrayList<>();
     
@@ -39,6 +42,7 @@ public ArrayList<Instrumento> instrumentosPorTipo(String tipo) {
     return resultado;
 }
     
+//funcion borrar Instrumento
 public void borrarInstrumento(String id) {
     instrumentos.removeIf(instrumento -> instrumento.id.equals(id));
 }
