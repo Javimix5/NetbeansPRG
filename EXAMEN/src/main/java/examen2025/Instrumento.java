@@ -9,22 +9,21 @@ import java.util.ArrayList;
  */
 public class Instrumento {
 
-    String ID;
-    String descripcion;
-    String tipo;
-    double precio;
-
-    public Instrumento(String ID, String descripcion, String tipo, double precio) {
-        this.ID = ID;
-        this.descripcion = descripcion;
-        this.tipo = tipo;
-        this.precio = precio;
-    }
-
-    @Override
-    public String toString() {
-        return "Instrumento{" + "ID=" + ID + ", descripcion=" + descripcion + ", tipo=" + tipo + ", precio=" + precio + '}';
-    }
+    String id;
+String descripcion;
+double precio;
+String tipo;
+public Instrumento(String id, String descripcion, double precio, String tipo) {
+    this.id = id;
+    this.descripcion = descripcion;
+    this.precio = precio;
+    this.tipo = tipo;
+}
+@Override
+public String toString() {
+    return "Instrumento{" + "id=" + id + ", descripcion=" + descripcion + ", precio=" + precio + ", tipo=" + tipo + '}';
+}
+    
     
     
     

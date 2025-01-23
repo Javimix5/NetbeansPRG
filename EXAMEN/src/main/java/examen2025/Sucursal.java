@@ -10,38 +10,38 @@ import java.util.ArrayList;
 public class Sucursal {
 
     String nombre;
-    ArrayList<Instrumento> instrumentos;
-
-    public Sucursal(String nombre) {
-        this.nombre = nombre;
-        this.instrumentos = new ArrayList<>();
-
+ArrayList<Instrumento> instrumentos;
+    
+public Sucursal(String nombre) {
+    this.nombre = nombre;
+    this.instrumentos = new ArrayList<>();
+}
+    
+public void añadirInstrumento(Instrumento instrumento) {
+    instrumentos.add(instrumento);
+}
+    
+public void listarInstrumentos() {
+    System.out.println("Listado de instrumentos " + nombre);
+    for (Instrumento instrumento : instrumentos) {
+        System.out.println(instrumento);
     }
-
-    public String getNombre() {
-        return nombre;
+}
+    
+public ArrayList<Instrumento> instrumentosPorTipo(String tipo) {
+    ArrayList<Instrumento> resultado = new ArrayList<>();
+    
+    for (Instrumento instrumento : instrumentos) {
+        if (instrumento.tipo.equalsIgnoreCase(tipo)) {
+            resultado.add(instrumento);
+        }
     }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public ArrayList<Instrumento> getInstrumentos() {
-        return instrumentos;
-    }
-
-    public void setInstrumentos(ArrayList<Instrumento> instrumentos) {
-        this.instrumentos = instrumentos;
-    }
-
-    public void agregarInstrumento(Instrumento instrumento) {
-        instrumentos.add(instrumento);
-    }
-
-    @Override
-    public String toString() {
-        return "Sucursal{" + "nombre=" + nombre + ", instrumento=" + instrumentos + '}';
-    }
+    return resultado;
+}
+    
+public void borrarInstrumento(String id) {
+    instrumentos.removeIf(instrumento -> instrumento.id.equals(id));
+}
 
 
 

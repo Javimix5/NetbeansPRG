@@ -9,36 +9,21 @@ import java.util.ArrayList;
  */
 public class Fabrica {
 
-    ArrayList<Sucursal> sucursales;
-
-    public Fabrica() {
-
-        this.sucursales = new ArrayList<>();
-    }
-
-    public void listarInstrumento(Instrumento instrumento) {
-        for (Sucursal sucursal : sucursales){
-        System.out.println("Imprimiendo listado instrumentos sucursal " + sucursal.nombre);
+     ArrayList<Sucursal> sucursales = new ArrayList<>();
+ public Fabrica() {
+     this.sucursales = new ArrayList<>();
+ }
+ public void anhadirSucursal(Sucursal sucursal) {
+     sucursales.add(sucursal);
+ }
+ public void borrarSucursal(String nombre) {
+     sucursales.removeIf(sucursal -> sucursal.nombre.equals(nombre));
+ }
+ public void listarSucursales() {
+     for (Sucursal sucursal : sucursales) {
+         sucursal.listarInstrumentos();
+     }
+ }
         
-        for (Instrumento instrumento : sucursal.instrumentos){
-            System.out.println(instrumento);
-        }
-    }
-    }
-    
-    public ArrayList<Instrumento> instrumentoPorTipo(String tipo, String Sucursal){
         
-    }
-            
-            
-            
-    public void borrarSucursal(Sucursal sucursal) {
-
-        sucursales.remove(sucursal);
-    }
-
-    public void anhadirSucursal(Sucursal sucursal) {
-        sucursales.add(sucursal);
-    }
-
 }//Fin clase
