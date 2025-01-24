@@ -18,7 +18,7 @@ public class JgpT8CuestionesC {
         
         //BichoDormilon2
         BichoDormilon bd2 = new BichoDormilon(5);
-        /*Daria error ya que deberia de estar vacio
+        /*Daria error ya que deberia de estar vacio, debido a que es una función a la que no hay que añadir valores
         bd2.come(10);
         */
         System.out.println("bd2 -> hambre: " + bd2.hambre);
@@ -30,12 +30,24 @@ public class JgpT8CuestionesC {
         bd.aDormir();
         System.out.println("bd -> hambre: " + bd.hambre);
         System.out.println("bd -> sueño: " + bd.sueño);
+        
+        
         /*Esto es lo que se muestra en pantalla
           bd2 -> hambre: 5
           bi -> hambre: 45
           bd -> hambre: 40
           bd -> hambre: 35
-          bd -> sue�o: 0*/
+          bd -> sue�o: 0
+        
+        Si eliminamos el valor de bd2.come(); se mostraría lo siguiente:
+          bd2 -> hambre: -5
+          bi -> hambre: 45
+          bd -> hambre: 40
+          bd -> hambre: 35
+          bd -> sue�o: 0      
+        */
+        
+        
     }// Fin main
 
 }// Fin clase
