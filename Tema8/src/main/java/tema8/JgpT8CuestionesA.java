@@ -20,10 +20,13 @@ public class JgpT8CuestionesA {
         System.out.println("bd -> hambre: " + bd.hambre);
         System.out.println("bd -> sueño: " + bd.sueño);
         //System.out.println("bd -> peso: " + bd.peso);
-            /*bi -> hambre: 50
+            
+            /*Esto es lo que se muestra en pantalla
+              bi -> hambre: 50
               bd -> hambre: 50
               bd -> sue�o: 100
-              La linea de bd.peso es privada por lo que no obtiene datos*/
+              La linea de bd.peso es privada por lo que no obtiene datos
+              salvo que generes el getPeso*/
 
     }// Fin main
 

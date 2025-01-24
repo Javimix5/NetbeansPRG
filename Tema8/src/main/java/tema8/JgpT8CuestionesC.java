@@ -30,8 +30,9 @@ public class JgpT8CuestionesC {
         bd.aDormir();
         System.out.println("bd -> hambre: " + bd.hambre);
         System.out.println("bd -> sueño: " + bd.sueño);
-
-        /*bi -> hambre: 45
+        /*Esto es lo que se muestra en pantalla
+          bd2 -> hambre: 5
+          bi -> hambre: 45
           bd -> hambre: 40
           bd -> hambre: 35
           bd -> sue�o: 0*/

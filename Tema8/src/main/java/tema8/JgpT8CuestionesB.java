@@ -24,7 +24,8 @@ public class JgpT8CuestionesB {
         System.out.println("bd -> hambre: " + bd.hambre);
         System.out.println("bd -> sueño: " + bd.sueño);
 
-        /*bi -> hambre: 45
+        /*Esto es lo que se muestra en pantalla
+          bi -> hambre: 45
           bd -> hambre: 40
           bd -> hambre: 35
           bd -> sue�o: 0*/
