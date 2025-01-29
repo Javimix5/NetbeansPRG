@@ -6,24 +6,25 @@ package formas;
  */
 public class Triangulo extends Figura {
 
-    double base;
-    double altura;
+    double base, altura;
+    
 
-    public Triangulo(String c, double b, double a) {
+    public Triangulo(String c, double b, double a){ 
+        
         super(c);
-        this.base = b;
-        this.altura = a;
+        this.base=b;
+        this.altura=a;
     }
 
-    public String toString() {
-        return super.toString()
-                + "\nBase: " + base
-                + "\nAltura: " + altura
-                + "\nArea: " + this.dameArea();
-    }
+    public String toString(){
+    return super.toString()
+            +"\nBase: "+base
+            +"\nAltura: "+altura
+            +"\nArea: "+this.dameArea();
+            }
 
     public double dameArea() {
-        return base * altura / 2;
+        return (base * altura) / 2;
     }
 
 }//Fin clase
