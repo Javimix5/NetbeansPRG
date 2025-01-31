@@ -1,5 +1,5 @@
 
-package examen2025;
+package Examen1_2025;
 
 
 /**
