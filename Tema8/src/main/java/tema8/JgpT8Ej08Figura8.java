@@ -14,15 +14,16 @@ public class JgpT8Ej08Figura8 {
 
     public static void main(String[] args) {
 
-        TrianguloV7 triangulo = new TrianguloV7(6,6,"equilatero"); 
+        TrianguloV8 triangulo = new TrianguloV8(6,6,"equilatero"); //Asigna los datos del constructor con 3 parametros
 
         triangulo.verDimension();
 
         triangulo.verEstilo();               
 
-        System.out.println("Area del triangulo con 3 parametros: " + triangulo.dameArea());              
-          
-        TrianguloV7 triangulo2 = new TrianguloV7(triangulo);
+        System.out.println("Area del triangulo con 3 parametros: " + triangulo.dameArea());                
+                        
+        
+        TrianguloV8 triangulo2 = new TrianguloV8(triangulo);
         
         System.out.println("Area del triangulo del nuevo constructor: " + triangulo2.dameArea());
 
