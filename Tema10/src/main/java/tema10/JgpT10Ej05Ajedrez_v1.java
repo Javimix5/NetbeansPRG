@@ -10,9 +10,9 @@ import java.util.Scanner;
 public class JgpT10Ej05Ajedrez_v1 {
 
     static Scanner teclado = new Scanner(System.in);
-    static final String Verde = "\u001B[32m";
-    static final String Negro = "\u001B[47m";
-    static final String Reset = "\u001B[0m";
+    static final String BLANCO = "\u001B[40m";
+    static final String NEGRO = "\u001B[47m";
+    static final String RESET = "\u001B[0m";
 
     public static void main(String[] args) {
 
@@ -59,15 +59,15 @@ public class JgpT10Ej05Ajedrez_v1 {
 
                 if ((i + j) % 2 == 0) {
                     if (i == pieza.fila && j == pieza.columna) {
-                        System.out.print(Verde + " P " + Reset);
+                        System.out.print(BLANCO + " P " + RESET);
                     } else {
-                        System.out.print(Verde + " . " + Reset);
+                        System.out.print(BLANCO + " . " + RESET);
                     }
                 } else {
                     if (i == pieza.fila && j == pieza.columna) {
-                        System.out.print(Negro + " P " + Reset);
+                        System.out.print(NEGRO + " P " + RESET);
                     } else {
-                        System.out.print(Negro + " . " + Reset);
+                        System.out.print(NEGRO + " . " + RESET);
                     }
                 }
             }
