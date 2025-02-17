@@ -14,12 +14,12 @@ class HabitacionDoble extends Habitacion {
     private static final double TARIFA = 100.0;
     private static final double INCREMENTO_MESES = 1.2;
 
-    public HabitacionDoble(int numHabitacion, boolean ocupada, LocalDate fechaCheckIn) {
-        super(numHabitacion, ocupada, fechaCheckIn);
+    public HabitacionDoble(int numHabitacion, boolean ocupada) {
+        super(numHabitacion, ocupada);
     }
 
     @Override
-    public double calcularPrecio(int dias, LocalDate fechaSalida) {
+    public double calcularPrecio(long dias, LocalDate fechaSalida) {
         double tarifaFinal = TARIFA;
         int mes = fechaSalida.getMonthValue();
         if (mes == 4 || mes == 7 || mes == 8) {

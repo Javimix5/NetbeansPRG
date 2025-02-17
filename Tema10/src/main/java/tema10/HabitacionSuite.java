@@ -14,12 +14,12 @@ class HabitacionSuite extends Habitacion {
     private static final double TARIFA = 200.0;
     private static final double DESCUENTO = 0.8;
 
-    public HabitacionSuite(int numHabitacion, boolean ocupada, LocalDate fechaCheckIn) {
-        super(numHabitacion, ocupada, fechaCheckIn);
+    public HabitacionSuite(int numHabitacion, boolean ocupada) {
+        super(numHabitacion, ocupada);
     }
 
     @Override
-    public double calcularPrecio(int dias, LocalDate fechaSalida) {
+    public double calcularPrecio(long dias, LocalDate fechaSalida) {
         double tarifaFinal = TARIFA;
         if (dias >= 10) {
             tarifaFinal *= DESCUENTO;

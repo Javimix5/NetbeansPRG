@@ -13,9 +13,10 @@ abstract class Habitacion {
     protected boolean ocupada;
     protected LocalDate fechaEntrada;
 
-    public Habitacion(int numHabitacion, boolean ocupada, LocalDate fechaEntrada) {
+    public Habitacion(int numHabitacion, boolean ocupada) {
         this.numHabitacion = numHabitacion;
-        this.ocupada = false;
+        this.ocupada = false; // No hace falta recibir `ocupada` si siempre se inicializa a `false`
+        this.fechaEntrada = null; // Asegurar que está inicializada
     }
 
     public boolean isOcupada() {
@@ -26,42 +27,43 @@ abstract class Habitacion {
         return numHabitacion;
     }
 
-    //Funcion CheckIN
-    public void checkIn() {
+    // Función CheckIN
+    public void checkIn(LocalDate fechaEntrada) {
         if (!ocupada) {
-            ocupada = true;
-            fechaEntrada = LocalDate.now();
-            System.out.println("La habitacion numero " + numHabitacion + " es suya");
+            this.ocupada = true;
+            this.fechaEntrada = fechaEntrada; // Asignación corregida
+            System.out.println("La habitacion numero " + numHabitacion + " es suya.");
         } else {
-            System.out.println("La habitacion numero " + numHabitacion + " no esta disponible");
+            System.out.println("La habitacion numero " + numHabitacion + " no esta disponible.");
         }
     }
 
-    //Funcion CheckOUT
-    public double checkOut() {
-        if (ocupada) {
-            LocalDate fechaSalida = LocalDate.now();
-            long dias = ChronoUnit.DAYS.between(fechaEntrada, fechaSalida);
-            System.out.println("");
-            if (dias == 0) {
-                dias = 1; // Mínimo un día
+    // Función CheckOUT
+    public void checkOut(LocalDate fechaSalida) {
+        if (ocupada) {  
+            if (fechaEntrada == null) { // Validación para evitar NullPointerException
+                System.out.println("Error: No hay una fecha de entrada registrada.");
+                return;
             }
+
+            long dias = ChronoUnit.DAYS.between(fechaEntrada, fechaSalida);
             ocupada = false;
-            double precio = calcularPrecio((int) dias, fechaSalida);
-            fechaEntrada = null;
-            return precio;
+            double precio = calcularPrecio(dias, fechaSalida);
+            this.fechaEntrada = null; // Restablecer fechaEntrada a null
+
+            System.out.println("La habitacion numero " + numHabitacion + " queda libre el dia " 
+                                + fechaSalida + ". Total a pagar: " + precio + " euros.");
         } else {
             System.out.println("La habitacion " + numHabitacion + " ya esta libre.");
-            return 0;
         }
     }
 
-    //Funcion Calcular Precio
-    public abstract double calcularPrecio(int dias, LocalDate fechaSalida);
+    // Función Calcular Precio
+    public abstract double calcularPrecio(long dias, LocalDate fechaSalida);
 
     @Override
     public String toString() {
         return "Habitacion " + numHabitacion + " - " + (ocupada ? "Ocupada" : "Libre");
     }
 
-}//Fin clase
+} // Fin de la clase

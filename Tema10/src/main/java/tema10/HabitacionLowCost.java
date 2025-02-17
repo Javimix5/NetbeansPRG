@@ -13,12 +13,12 @@ import java.time.LocalDate;
 class HabitacionLowCost extends Habitacion {
     private static final double TARIFA = 50.0;
 
-    public HabitacionLowCost(int numHabitacion, boolean ocupada, LocalDate fechaCheckIn) {
-        super(numHabitacion, ocupada, fechaCheckIn);
+    public HabitacionLowCost(int numHabitacion, boolean ocupada) {
+        super(numHabitacion, ocupada);
     }
 
     @Override
-    public double calcularPrecio(int dias, LocalDate fechaSalida) {
+    public double calcularPrecio(long dias, LocalDate fechaSalida) {
         return dias * TARIFA;
     }
 
