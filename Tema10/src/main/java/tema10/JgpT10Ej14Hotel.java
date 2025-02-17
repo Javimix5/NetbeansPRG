@@ -8,6 +8,7 @@ package tema10;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Scanner;
+import javax.swing.JOptionPane;
 
 public class JgpT10Ej14Hotel {
 
@@ -45,12 +46,13 @@ public class JgpT10Ej14Hotel {
             System.out.println("3 - Estado habitaciones");
             System.out.println("0 - Salir");
             int opcion = teclado.nextInt();
+            int numHabitacion;
 
             switch (opcion) {
                 case 1:
                     System.out.println("Check-In");
                     System.out.println("Diga el numero de habitacion");
-                    int numHabitacion = teclado.nextInt();
+                    numHabitacion = Integer.parseInt(JOptionPane.showInputDialog("Numero de habitacion"));
                     Habitacion habitaciones = buscarHabitacion(habitacion, numHabitacion);
                     if (habitaciones != null) {
                         System.out.println("Fecha de entrada");
