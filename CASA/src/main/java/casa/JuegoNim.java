@@ -6,7 +6,7 @@ public class JuegoNim {
         Nim juego = new Nim();
         boolean finJuego = false;
 
-        System.out.println("¡Bienvenido al juego del NIM!");
+        System.out.println("Bienvenido al juego del NIM!");
         Consola.pintarTablero(juego);
 
         while (!juego.fin()) {
@@ -15,13 +15,13 @@ public class JuegoNim {
             int filaMaquina = movimientoMaquina / 10;
             int cantMaquina = movimientoMaquina % 10;
 
-            System.out.println("\nTurno de la máquina:");
-            System.out.printf("La máquina retira %d palillos de la fila %d.%n", cantMaquina, filaMaquina + 1);
+            System.out.println("\nTurno de la maquina:");
+            System.out.printf("La maquina retira %d palillos de la fila %d.%n", cantMaquina, filaMaquina + 1);
             juego.juega(filaMaquina, cantMaquina);
             Consola.pintarTablero(juego);
 
             if (juego.fin()) {
-                System.out.println("¡La máquina gana!");
+                System.out.println("La maquina gana!");
                 break;
             }
 
@@ -35,14 +35,14 @@ public class JuegoNim {
                 jugadaValida = juego.juega(filaJugador, cantJugador);
 
                 if (!jugadaValida) {
-                    System.out.println("Jugada no válida. Intenta de nuevo.");
+                    System.out.println("Jugada no valida. Intenta de nuevo.");
                 }
             }
 
             Consola.pintarTablero(juego);
 
             if (juego.fin()) {
-                System.out.println("¡Has ganado!");
+                System.out.println("Has ganado!");
                 break;
             }
         }
