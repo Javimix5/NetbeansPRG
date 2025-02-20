@@ -29,7 +29,7 @@ public class NumMultiplo {
     
 //FUNCION PARA LEER ENTEROS (Puede ser reutilizada en cualquier programa)
 
-    static int leerEnteroEntre(String mensaje, int min, int max) {
+    public static int leerEnteroEntre(String mensaje, int min, int max) {
         System.out.print(mensaje + ": ");
         int x = Integer.parseInt(teclado.nextLine());
         //Para repetir la petición de numero en caso de error
@@ -43,10 +43,10 @@ public class NumMultiplo {
 //FUNCION PARA NUMEROS MULTIPLOS (Puede ser reutilizada en cualquier programa)
 //Copiar los dos static    
     
-    static boolean esMultiplo(int a, int b) {
+    public static boolean esMultiplo(int a, int b) {
         return obtenerResto(a, b) == 0;
     }
-    static int obtenerResto(int num1, int num2) {
+    public static int obtenerResto(int num1, int num2) {
         return num1 - num2 * (num1 / num2);
     }
 
