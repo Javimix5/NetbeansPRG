@@ -14,7 +14,7 @@ public class Dado {
     public static int lanzar(){
         
     Random random = new Random();
-    return random.nextInt(6)+1;
+    return random.nextInt(7)+1;
     
     }
     

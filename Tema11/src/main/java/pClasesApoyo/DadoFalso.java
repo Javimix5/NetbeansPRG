@@ -8,15 +8,10 @@ import java.util.Random;
  */
 public class DadoFalso {
 
-    public int lanzar(int n) {
+    public static int lanzar(int n) {
         Random random = new Random();
-        int resultado = random.nextInt(6) + 1;
-        if (n == resultado) {
-            if (random.nextBoolean()) {
-                return n;
-            }
-        }
-        return resultado;
+        int resultado = random.nextInt(7) + 1;
+        return (resultado == 7) ? n : resultado;
     }
 
 }//Fin clase
