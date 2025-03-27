@@ -17,24 +17,19 @@ public class JgpT13Ej01DividirTry {
         double division;
 
         System.out.println("Vamos a dividir");
-        
         System.out.println("Indica el dividendo");
-        
         dividendo = teclado.nextInt();
-        
+
         System.out.println("Indica el divisor");
-        
         divisor = teclado.nextInt();
 
         try {
             division = dividendo / divisor;
             System.out.println("Resultado: ");
-        System.out.println(dividendo + " / " + divisor + " = " + division);
+            System.out.println(dividendo + " / " + divisor + " = " + division);
         } catch (ArithmeticException e) {
-            System.out.println("El resultado de la division es 0");
-            division = 0;
+            System.out.println("El resultado de la division es 0");            
         }
-        
 
     }// Fin main
 
