@@ -9,7 +9,7 @@ package tema13;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class JgpT13Ej04 {
+public class JgpT13Ej04MediaTempTry {
 
     static Scanner teclado = new Scanner(System.in);
 

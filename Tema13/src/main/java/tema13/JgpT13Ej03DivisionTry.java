@@ -8,7 +8,7 @@ package tema13;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class JgpT13Ej03 {
+public class JgpT13Ej03DivisionTry {
 
     static Scanner teclado = new Scanner(System.in);
     

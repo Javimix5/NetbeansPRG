@@ -7,7 +7,7 @@ package tema13;
  */
 import java.util.Scanner;
 
-public class JgpT13Ej02 {
+public class JgpT13Ej02SumaTry {
 
     static Scanner teclado = new Scanner(System.in);
 
