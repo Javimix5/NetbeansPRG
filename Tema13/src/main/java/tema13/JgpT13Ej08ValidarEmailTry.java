@@ -8,7 +8,7 @@ package tema13;
 
 import java.util.Scanner;
 
-public class JgpT13Ej08 {
+public class JgpT13Ej08ValidarEmailTry {
 
     static Scanner teclado = new Scanner(System.in);
     
