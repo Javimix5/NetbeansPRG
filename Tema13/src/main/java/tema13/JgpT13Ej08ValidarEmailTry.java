@@ -20,14 +20,14 @@ public class JgpT13Ej08ValidarEmailTry {
         try {
             validarEmail(email);
             System.out.println("Email válido");
-        } catch (Exception e) {
+        } catch (IllegalArgumentException e) {
             System.out.println("Error: " + e.getMessage());
         }
       
 
     }// Fin main
 
-    public static void validarEmail(String email) throws Exception {
+    public static void validarEmail(String email)  {
         if (email == null || email.length() < 5) {
             throw new IllegalArgumentException("Formato email inválido");
         }
