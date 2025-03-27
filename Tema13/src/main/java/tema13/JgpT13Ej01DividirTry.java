@@ -13,7 +13,8 @@ public class JgpT13Ej01DividirTry {
 
     public static void main(String[] args) {
 
-        int dividendo, divisor, division;
+        int dividendo, divisor;
+        double division;
 
         System.out.println("Vamos a dividir");
         
