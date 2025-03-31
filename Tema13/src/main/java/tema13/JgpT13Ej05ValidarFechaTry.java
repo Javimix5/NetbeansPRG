@@ -29,20 +29,18 @@ public class JgpT13Ej05ValidarFechaTry {
             } else {
                 System.out.println("La fecha NO es valida");
             }
-        } catch (Exception e) {
+        } catch (DateTimeException e) {
             System.out.println("Error: Entrada no valida. Debes introducir numeros enteros");
         }
 
     }// Fin main
 
-    public static boolean validarFecha(int anio, int mes, int dia) {
+    public static boolean validarFecha(int anio, int mes, int dia) throws DateTimeException {
         try {
             LocalDate.of(anio, mes, dia);
             return true;
         } catch (DateTimeException e) {
             return false;
         }
-
     }
-
 }// Fin clase
