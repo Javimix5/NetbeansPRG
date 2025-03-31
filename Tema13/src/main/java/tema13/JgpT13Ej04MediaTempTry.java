@@ -19,7 +19,7 @@ public class JgpT13Ej04MediaTempTry {
         double[] temperaturas = new double[7];
 
         // Llenar el array con valores aleatorios entre 0 y 40
-        for (int i = 0; i < 7; i++) {
+        for (int i = 0; i < temperaturas.length; i++) {
             temperaturas[i] = Math.random() * 40;
         }
         
