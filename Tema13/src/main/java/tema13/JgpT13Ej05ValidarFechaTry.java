@@ -19,26 +19,28 @@ public class JgpT13Ej05ValidarFechaTry {
 
         try {
             System.out.println("Introduce el dia");
-            dia = teclado.nextInt();
+            dia = Integer.parseInt(teclado.nextLine());
             System.out.println("Introduce el mes");
-            mes = teclado.nextInt();
+            mes = Integer.parseInt(teclado.nextLine());
             System.out.println("Introduce el anio");
-            anio = teclado.nextInt();
+            anio = Integer.parseInt(teclado.nextLine());
+            
             if (validarFecha(dia, mes, anio)) {
                 System.out.println("La fecha es valida");
             } else {
                 System.out.println("La fecha NO es valida");
             }
-        } catch (DateTimeException e) {
+        } catch (NumberFormatException | DateTimeException e) {
             System.out.println("Error: Entrada no valida. Debes introducir numeros enteros");
         }
 
     }// Fin main
 
-    public static boolean validarFecha(int anio, int mes, int dia) throws DateTimeException {
+    public static boolean validarFecha(int dia, int mes, int anio) {
         try {
-            LocalDate.of(anio, mes, dia);
+            fecha = LocalDate.of(anio, mes, dia);
             return true;
+            
         } catch (DateTimeException e) {
             return false;
         }
