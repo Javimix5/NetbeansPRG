@@ -1,0 +1,3 @@
+Este es un fichero de prueba.
+Tiene varias líneas y palabras.
+Java es divertido.

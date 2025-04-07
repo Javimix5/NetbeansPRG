@@ -9,6 +9,6 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>22</maven.compiler.source>
         <maven.compiler.target>22</maven.compiler.target>
-        <exec.mainClass>tema14.JgpT14Ej01</exec.mainClass>
+        <exec.mainClass>tema14.JgpT14Ej01CarpetaFichero</exec.mainClass>
     </properties>
 </project>
