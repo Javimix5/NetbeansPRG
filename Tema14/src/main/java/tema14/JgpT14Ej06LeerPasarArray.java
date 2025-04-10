@@ -80,6 +80,7 @@ public class JgpT14Ej06LeerPasarArray {
                 Este es un fichero de prueba.
                 Tiene varias líneas y palabras.
                 Java es divertido.
+                Probando cosas...
                 """;
 
         try (BufferedWriter bw = new BufferedWriter(new FileWriter(archivo))) {
