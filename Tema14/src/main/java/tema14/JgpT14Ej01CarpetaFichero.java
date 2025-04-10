@@ -33,7 +33,7 @@ public class JgpT14Ej01CarpetaFichero {
 
             //Escribir con tildes, eñes y simbolos
             escritor.write("Primera línea con acento: áéíóú\n");
-            escritor.write("Segunda línea con eñes: añon, muñeca, cañón\n");
+            escritor.write("Segunda línea con eñes: año, muñeca, cañón\n");
             escritor.write("Tercera línea: ¡Hola, qué tal estás!\n");
             escritor.close();
 
