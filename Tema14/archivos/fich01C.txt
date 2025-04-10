@@ -1,0 +1,1 @@
+Primera línea con acento: camión, rápido, útil, vía, trébolSegunda línea con eñes: año, muñeca, cañónTercera línea: ¡Hola, qué tal estás!
