@@ -21,15 +21,16 @@ public class JgpT14Ej01CarpetaFicheroA {
                 new BufferedWriter(
                         new OutputStreamWriter(
                                 new FileOutputStream("Archivos" + File.separator + "fich01.txt", true), 
-                                "UTF_8"))) {
+                                "UTF_8"))
+                ) {
             
-            escritor.write("Primera línea con acento: áéíóú");
+            escritor.write("Primera línea con acento: camión, rápido, útil, vía, trébol");
             escritor.newLine();
             escritor.write("Segunda línea con eñes: año, muñeca, cañón");
             escritor.newLine();
             escritor.write("Tercera línea: ¡Hola, qué tal estás!");            
             escritor.newLine();
-            escritor.flush(); //autoflush
+            escritor.flush(); //autoflush no sería necesario debido al try-with-resources
             
             
             System.out.println("Fichero creado correctamente con UTF-8");
