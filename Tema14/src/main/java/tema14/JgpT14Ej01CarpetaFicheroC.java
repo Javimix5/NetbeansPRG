@@ -1,6 +1,5 @@
 package tema14;
 
-import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -12,26 +11,26 @@ import java.util.Scanner;
  *
  * @author Javier González Prados
  */
-public class JgpT14Ej01CarpetaFicheroA {
+public class JgpT14Ej01CarpetaFicheroC {
 
     static Scanner teclado = new Scanner(System.in);
 
     public static void main(String[] args) {
 
-        try (BufferedWriter escritor = 
-                new BufferedWriter(
+        try (
+                OutputStreamWriter escritor =
                         new OutputStreamWriter(
                                 new FileOutputStream(
-                                        "Archivos" + File.separator + "fich01A.txt", true), 
-                                            StandardCharsets.UTF_8))
-                ) {
+                                        "Archivos" + File.separator + "fich01C.txt", true), 
+                                            StandardCharsets.UTF_8)
+            ){
             
             escritor.write("Primera línea con acento: camión, rápido, útil, vía, trébol");
-            escritor.newLine();
+            System.lineSeparator();
             escritor.write("Segunda línea con eñes: año, muñeca, cañón");
-            escritor.newLine();
+            System.lineSeparator();
             escritor.write("Tercera línea: ¡Hola, qué tal estás!");            
-            escritor.newLine();
+            System.lineSeparator();
             escritor.flush(); //autoflush no sería necesario debido al try-with-resources
             
             
