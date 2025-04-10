@@ -5,7 +5,7 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
-import java.io.Writer;
+import java.io.PrintWriter;
 import java.nio.charset.StandardCharsets;
 import java.util.Scanner;
 
@@ -19,24 +19,17 @@ public class JgpT14Ej01CarpetaFichero {
 
     public static void main(String[] args) {
 
-        try {
-            //Crear carpeta si no existe
-            File carpeta = new File("Archivos");
-            if (!carpeta.exists()) {
-                carpeta.mkdir();
-            }
-            //Crear Fichero.txt
-            File fichero = new File(carpeta, "fich01.txt");
-
-            //Usar UTF-8 para escribir el fichero
-            Writer escritor = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(fichero), StandardCharsets.UTF_8));
-
-            //Escribir con tildes, eñes y simbolos
-            escritor.write("Primera línea con acento: áéíóú\n");
-            escritor.write("Segunda línea con eñes: año, muñeca, cañón\n");
-            escritor.write("Tercera línea: ¡Hola, qué tal estás!\n");
-            escritor.close();
-
+        try (PrintWriter escritor = new PrintWriter
+        (new BufferedWriter(new OutputStreamWriter
+        (new FileOutputStream("Archivos" + File.separator + "fich01.txt", true), 
+                StandardCharsets.UTF_8)))) {
+            
+            escritor.println("Primera línea con acento: áéíóú");
+            escritor.println("Segunda línea con eñes: año, muñeca, cañón");
+            escritor.println("Tercera línea: ¡Hola, qué tal estás!");
+            
+            escritor.flush();
+            
             System.out.println("Fichero creado correctamente con UTF-8");
 
         } catch (IOException e) {
