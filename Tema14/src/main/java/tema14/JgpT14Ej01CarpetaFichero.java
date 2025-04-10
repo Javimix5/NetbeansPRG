@@ -19,10 +19,9 @@ public class JgpT14Ej01CarpetaFichero {
 
     public static void main(String[] args) {
 
-        try (PrintWriter escritor = new PrintWriter
-        (new BufferedWriter(new OutputStreamWriter
-        (new FileOutputStream("Archivos" + File.separator + "fich01.txt", true), 
-                StandardCharsets.UTF_8)))) {
+        try (PrintWriter escritor = new PrintWriter(
+                new BufferedWriter(new OutputStreamWriter(
+                        new FileOutputStream("Archivos" + File.separator + "fich01.txt", true), StandardCharsets.UTF_8)))) {
             
             escritor.println("Primera línea con acento: áéíóú");
             escritor.println("Segunda línea con eñes: año, muñeca, cañón");
