@@ -17,7 +17,7 @@ public class JgpT14Ej01CarpetaFicheroE {
 
         try (
                 FileOutputStream escritor = new FileOutputStream(
-                        "Archivos" + File.separator + "fich01D.txt", true)) {
+                        "Archivos" + File.separator + "fich01E.txt", true)) {
 
             escritor.write(("Primera línea con acento: camión, rápido, útil, vía, trébol"
                     + System.lineSeparator()).getBytes("UTF-8"));
