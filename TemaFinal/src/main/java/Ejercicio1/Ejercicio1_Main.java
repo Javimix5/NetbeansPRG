@@ -5,7 +5,7 @@ package Ejercicio1;
  *
  * @author Javier González Prados
  */
-public class TemaFinal {
+public class Ejercicio1_Main {
 
     public static void main(String[] args) {
 
